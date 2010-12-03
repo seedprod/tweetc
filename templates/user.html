@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block bodyclass %}post{% endblock %}
+{% block content %}
+{% ifequal user_logged_in.screen_name user.screen_name%}
+<div id="post">
+<form action="/post" method="post">
+  <textarea id="post_content" name="content" style="width:100%;" rows="15" class="tinymce"></textarea>
+  <br />
+  <input id="post_button" type="submit" value="Post to Twitter">
+</form>
+</div>
+<div class="clear"></div>
+<script type="text/javascript" src="/static/js/jquery.counter.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.notifyBar.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.notifyBar.css" media="screen" />
+<script type="text/javascript">
+	$("#post_content").counter({
+		count: 'up',
+		goal: 50000,
+	});
+    {% if notify %}
+	$.notifyBar({
+	    html: "Posted",
+	    animationSpeed: "normal",
+	    cls: 'success',
+		delay: 5000
+	 });
+	{% endif %}
+</script>
+{% endifequal %}
+<div id="posts">
+    {% for tweetc in timeline %}
+      <div class="item">
+      {{tweetc.tweet|urlize}}
+      <br />
+      <span class="dt">{{tweetc.created_on|date:"g:i a M d, Y"}}</span>
+      {% comment %}
+      {{tweetc.created_on|timesince:now }}
+      {% endcomment %}
+      </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+{% block sidebar %}
+	{% include "sidebar.html" %}
+{% endblock sidebar %}
+

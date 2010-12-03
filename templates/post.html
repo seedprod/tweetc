@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block bodyclass %}post{% endblock %}
+
+{% block content %}
+
+<div id="post">
+    <div class="left">
+        <h2><a href="/user/{{user.screen_name}}">@{{user.screen_name|default_if_none:""}}</a></h2>
+        <span class="dt">{{dt|date:"g:i a M d, Y"}}</span>
+    </div>
+    <div class="right">
+         <script type="text/javascript">
+         tweetmeme_style = 'compact';
+         tweetmeme_source = 'tweetcapp';
+         tweetmeme_service = 'bit.ly';
+         </script>
+         <script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+    </div>
+    <div class="clear"></div>
+    <div id="content">
+    {{post|urlize|linebreaks}}
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/static/js/jquery.oembed.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("[rel=nofollow]").oembed(null
+			, 
+			{ 
+			embedMethod: "replace", 
+			maxWidth: 500, 
+			maxHeight: 500,
+			}
+			,
+			function(container, oembed) {
+				if(oembed !== null)
+				container.hide().after("<br />" + oembed.code + "<br />");
+			}
+			);
+		
+			$("#main img").each(function(index) {
+			    var width = $(this).width();
+			    if(parseInt(width) > 500){
+					$(this).width(500)
+		    	}
+			});
+			
+
+	});
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/tweetc/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+{% endblock content %}
+{% block sidebar %}
+	{% include "sidebar.html" %}
+{% endblock sidebar %}

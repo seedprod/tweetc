@@ -1,0 +1,138 @@
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    font-style:italic;
+}
+a {
+    color:#FF228A;
+}
+
+
+#CollectaSearchWidget {
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: #e9e9e9;
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+div#CollectaSearchWidget div.collectaHeader {
+    background-position: center center;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+
+div#CollectaSearchWidget .collectaTitle {
+    color: #000033;
+    border-bottom: solid 2px #000033;
+}
+
+#collectaSubTitle {
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    color: #666;
+    font-family:Georgia,"Times New Roman", serif;
+    font-style:italic;
+}
+
+div#CollectaSearchWidget div#collectaResults div#collectaLoading {
+    color: #999;
+}
+
+div#CollectaSearchWidget div#collectaResults ul  {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+}
+
+        /* the next section is formatting for the various parts and types of Collecta results */
+        /* the result title (for stories) */
+        div#CollectaSearchWidget div#collectaResults ul li span.collectaItemTitle {
+            color: #000033;
+        }
+
+            div#CollectaSearchWidget div#collectaResults ul li span.collectaItemTitle a {
+                color: #000033;
+            }
+        
+        /* author and date */
+        div#CollectaSearchWidget div#collectaResults ul li span.collectaItemAuthorandDate {
+            color: #999;
+        }
+
+            div#CollectaSearchWidget div#collectaResults ul li span.collectaItemAuthorandDate a {
+                color: #666;
+            }
+
+            div#CollectaSearchWidget div#collectaResults ul li span.collectaItemAuthorandDate img {
+                border: solid 1px #eee;
+            }
+        
+        /* avatar/favicon image */
+        div#CollectaSearchWidget div#collectaResults ul li img.collectaItemFavicon {
+            border: solid 1px #eee;
+            /* default padding is 1px, creating a space b/w image and border, this would
+               eliminate that, if desired: */
+            padding: 0;
+        }
+
+/* footer with Collecta logo and links to Collecta and the logo builder
+    you may style these but please leave the logo and links
+    (we'll soon have different logo options as well) */
+div#CollectaSearchWidget div.collectaFooter {
+    border-top: none;
+}
+
+div#CollectaSearchWidget div.collectaFooter a {
+    color: #333;
+}
+
+#collectaFooter{
+    display:none ;
+}
+
+#collectaLink{
+    background-position: center left !important;
+}
+
+div#CollectaSearchWidget div#collectaResults ul li span.collectaItemUpdate {
+-moz-border-radius:5px 5px 5px 5px;
+-moz-box-shadow:2px 2px 3px #888888;
+-webkit-border-radius:5px 5px 5px 5px;
+-webkit-box-shadow:2px 2px 3px #888888;
+background:none repeat scroll 0 0 #FFD;
+border:1px solid #FA0;
+display:block;
+margin:0 5px 0 0;
+padding:10px 10px 20px;
+}
+
+div#CollectaSearchWidget div#collectaResults ul li span.collectaItemTitle,div#CollectaSearchWidget div#collectaResults ul li span.collectaItemDesc, div#CollectaSearchWidget div#collectaResults ul li span.collectaItemDesc + .collectaItemAuthorandDate { 
+    display:none ;
+}
+
+div#CollectaSearchWidget div#collectaResults ul li span.collectaItemAuthorandDate {
+background:url("/static/images/tip.gif") no-repeat scroll 20px -1px transparent;
+color:#999999;
+padding:7px 10px;
+top:47px;
+z-index:10;
+}
+
+#CollectaSearchWidget  {
+-moz-border-radius:none;
+-moz-box-shadow:none;
+-webkit-border-radius:none;
+-webkit-box-shadow:none;
+border-color:none;
+border-style:none;
+border-width:none;
+}
+
+div#CollectaSearchWidget div.collectaFooter{
+   display:none;
+}
+

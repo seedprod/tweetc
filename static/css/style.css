@@ -1,0 +1,196 @@
+
+#custom-doc { width:69.23em;*width:67.56em;min-width:900px; margin:auto; text-align:left; } 
+
+
+html,body{
+    background:#fff;
+    font-family:Georgia,"Times New Roman",serif;
+    font-style:italic;
+    color:#333;
+}
+
+#nav li{
+    list-style:none;
+    float:right;
+    padding:0 0 0 20px;
+    font-size:123.1%;
+}
+
+#bd{
+    font-size:108%;
+    line-height:167%;
+    clear:both;
+}
+
+.clear{
+    clear:both;
+}
+
+.left{float:left;}
+.right{float:right;}
+
+.strong{
+    font-weight:bold;
+}
+
+a, a:visited {
+    /*color:#C08;*/
+    color:#FF228A;
+    text-decoration:none;
+}
+
+a:hover, a:active{
+    color:#FF228A;
+    text-decoration:underline;
+}
+
+input[type=button],input[type=submit] {
+    background:#f5f5f5;
+    border:1px solid #e5e5e5;
+    padding:3px;
+    font-size:85%;
+    color:#FF228A;
+}
+
+#post_content_counter{
+    position:absolute;
+    font-size:123.1%;
+    color:#FF228A;
+    width:40px;
+}
+
+#post_button{
+    float:right;
+}
+
+#branding{
+    /*background: transparent url('/static/images/tweetc-logo.png') no-repeat;*/
+    height:110px;
+    margin:0 0 40px 0;
+}
+
+#logo h1,#description{
+    position: absolute;
+    left:-9999px;
+}
+
+#login{
+    text-align:right;
+}
+
+#login{
+    padding-top:40px;
+}
+
+.front #sidebar{
+    margin:0 20px;
+}
+
+#post h2{
+   margin:0;
+}
+
+.highlight-pink{
+    color:#FF228A;
+}
+
+#comment,.page .post,.post #post,.post #sidebar,.post #posts .item{
+    overflow:hidden;
+    -moz-border-radius:5px 5px 5px 5px;
+    -moz-box-shadow:2px 2px 3px #888888;
+    -webkit-border-radius:5px 5px 5px 5px;
+    -webkit-box-shadow:2px 2px 3px #888888;
+    background:none repeat scroll 0 0 #FFD;
+    border:1px solid #FA0;
+    padding:20px;
+}
+
+.post #posts .item{
+   margin:0 0 15px 0; 
+   font-size:13px;
+   line-height:16px;
+   padding:10px 20px;
+}
+
+.page{
+    width:750px;
+    margin:0 auto;
+}
+
+#post{
+  margin-bottom:15px;
+  position:relative;
+}
+
+#post #content{
+    margin: 20px 0 0;
+}
+
+.dt{
+   font-size:85%;
+   line-height:16px;
+   color:#666;
+}
+
+#profile p,#profile-extra{
+   font-size:85%;
+   line-height:16px; 
+}
+
+#page{
+    width:600px;
+    margin:0 auto;
+}
+
+.collecta{
+    font-size:85%;
+    color:#666;
+}
+
+/* Side Bar */
+#profile{
+    margin: 0 0 20px 0;
+}
+img.twtr-profile-img {
+    border:0 none !important;
+    display:block;
+    float:left;
+    width:50px;
+    height:50px;
+}
+
+#profile h3, #profile h4 {
+margin:0 0 0 60px;
+}
+
+#profile p{
+    margin:10px 0;
+}
+
+/* Footer */
+#footer{
+    margin:20px 0;
+    font-size:85%;
+    color:#666;
+}
+
+#footer .second{
+    text-align:center;
+}
+
+#footer .third{
+    text-align:right;
+}
+
+/* Twitter Widget */
+.twtr-doc{
+    margin-left:-10px;
+    font-style:normal;
+}
+.twtr-hd{
+    display:none;
+}
+
+.collecta img{
+    vertical-align:text-top;
+}

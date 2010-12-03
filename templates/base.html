@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}Tweetc - Post more than just 140 characters on Twitter{% endblock %}</title>
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			google.load("jquery", "1.4.2");
+			google.load("chrome-frame", "1.0.2");
+		</script>
+		<meta name="google-site-verification" content="a59wTWFkJyU20Vhl0dQgMLHGyZRrUMaKTK5sUJpMVYg" />
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css&2.8.0r4/build/base/base-min.css" /> 
+	    <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
+	    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico" />
+	</head>
+	<body class="{% block bodyclass %}{% endblock %}">
+		<div id="doc2" class="{% block layout %}yui-t6{% endblock %}"> 
+		   <div id="hd" role="banner">
+		       <div id="branding">
+               <div class="yui-g">
+                   <div id="logo" class="yui-u first">
+               	        <h1>Tweetc</h1>
+               	        <div id="description">Post More than just 140 characters</div>
+               	        <a href="/"><img src="/static/images/tweetc-logo.png" alt="Tweetc Logo"></a>
+               	    </div>
+                   <div id="login" class="yui-u">
+                      {% if session %}
+                        <ul id="nav">
+                           <li><a href="/logout">Logout</a></li>
+                           <li><a href="/settings">Settings</a></li>
+                           {% if screen_name %}
+                           <li><a href="/user/{{screen_name}}">Post</a></li>
+                           {% else %}
+                           <li><a href="/user/{{user.screen_name}}">Post</a></li>
+                           {% endif %}
+                        </ul>
+               	       {% else %}
+                           <a href="/login"><img src="/static/images/Sign-in-with-Twitter-lighter.png" alt="Sign in with Twitter" /></a>
+                       {% endif %}
+                       <!--We're working out some things check back later...-->
+               	   </div>
+               </div>
+               </div>
+		   </div>
+		   <div id="bd" role="main">
+		       <div id="yui-main">
+		           <div class="yui-b">
+               	        <div class="yui-g"> 
+               	            <div id="main">
+               	            {% block content %}
+            				{% endblock content %}
+            				</div>
+                 	    </div> 
+                 	</div> 
+               </div> 
+               <div class="yui-b">
+                   <div id="sidebar">
+                   {% block sidebar %}
+                   {% endblock sidebar %}
+                   </div>
+               </div>
+		   </div>
+		   <div id="ft" role="contentinfo">
+		       <div id="footer">
+		           <div class="yui-gb">
+                       <div class="yui-u first">
+                   	        <p>&copy;{% now "Y" %} Tweetc, All Rights Reserved</a></p>
+                   	    </div>
+                       <div class="yui-u second">
+						   Follow <a href="http://twitter.com/tweetcapp">@tweetcapp</a>
+                           Developed by <a href="http://twitter.com/johnturner">@johnturner</a>&nbsp;&nbsp;&nbsp; 
+                   	   </div>
+                   	   <div class="yui-u third">
+						   <!--<a href="http://getsatisfaction.com/tweetc">Support</a> |-->
+                           <a href="/terms">Terms &amp; Conditions</a> | 
+                           <a href="/privacy">Privacy Policy</a> | 
+                           <!--<a href="/api">API</a>-->
+                   	   </div>
+                   </div>
+		       </div>
+		   </div>
+		</div>
+	
+		<script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+        try {
+        var pageTracker = _gat._getTracker("UA-499993-9");
+        pageTracker._trackPageview();
+        } catch(err) {}</script>
+		<script type="text/javascript">
+		var uservoiceOptions = {
+		  /* required */
+		  key: 'tweetc',
+		  host: 'tweetc.uservoice.com', 
+		  forum: '41805',
+		  showTab: true,  
+		  /* optional */
+		  alignment: 'left',
+		  background_color:'#FF228A', 
+		  text_color: 'white',
+		  hover_color: '#FE93C5',
+		  lang: 'en'
+		};
+
+		function _loadUserVoice() {
+		  var s = document.createElement('script');
+		  s.setAttribute('type', 'text/javascript');
+		  s.setAttribute('src', ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js");
+		  document.getElementsByTagName('head')[0].appendChild(s);
+		}
+		_loadSuper = window.onload;
+		window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+		</script>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+
+
+  <div id="profile">
+	<a class="twtr-profile-img-anchor" href="http://twitter.com/{{user.screen_name}}" target="_blank">
+	<img src="{{user.profile_image_url}}" alt="Twitter Avatar" class="twtr-profile-img">
+	</a>
+    <h3>{{user.name|default_if_none:""}}</h3>
+	<h4>@{{user.screen_name|default_if_none:""}}</h4>
+	<div class="clear"></div>
+	{% if user.description %}
+    <p>{{user.description|default_if_none:""}}</p>
+    {% endif %}
+	<div id="profile-extra">
+    {% if user.location %}
+    <span class="strong">Location:</span> {{user.location|default_if_none:""}}
+    {% endif %}
+    {% if user.url %}
+    <br />
+    <span class="strong">Website:</span> {{user.url|default_if_none:""|urlize}}
+    {% endif %}
+    {% if user.friends_count%}
+    <br />
+    <span class="strong">Following:</span> {{user.friends_count|default_if_none:""}}
+    {% endif %}
+    {% if user.followers_count %}
+    <br />
+    <span class="strong">Followers:</span> {{user.followers_count|default_if_none:""}}
+    {% endif %}
+	</div>
+	<p>
+	<script type="text/javascript">
+	tweetmeme_screen_name = '{{user.screen_name}}';
+	tweetmeme_style = 'compact';
+	</script>
+	<script type="text/javascript" src="http://tweetmeme.com/i/scripts/follow.js"></script>
+	</p>
+  </div>
+    <h4>Latest Twitter Activity...</h4>
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script>
+	new TWTR.Widget({
+	  version: 2,
+	  type: 'profile',
+	  rpp: 4,
+	  interval: 3000,
+	  width: 260,
+	  height: 300,
+	  theme: {
+	    shell: {
+	      background: '#FFD',
+	      color: '#FFD'
+	    },
+	    tweets: {
+	      background: '#FFD',
+	      color: '#333',
+	      links: '#ff2289'
+	    }
+	  },
+	  features: {
+	    scrollbar: false,
+	    loop: false,
+	    live: false,
+	    hashtags: true,
+	    timestamp: true,
+	    avatars: false,
+	    behavior: 'all'
+	  }
+	}).render().setUser('{{user.screen_name}}').start();
+	</script>
+	<div id="google_translate_element"></div><script>
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({
+	    pageLanguage: 'en'
+	  }, 'google_translate_element');
+	}
+	</script><script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+

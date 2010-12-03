@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block layout %}{% endblock %}
+
+{% block content %}
+<div class="page">
+<div class="post">
+    <p>To post to Tweetc from your phone or your desktop just send an email to the email address below. 
+        Copy and paste the email address below into your contacts.
+        Remember to keep your Tweetc email address a secret.
+    </p>
+    <span class="highlight-pink">{{user.screen_name}}.{{user.email_key}}@tweetc-app.appspotmail.com</span>
+    <p>
+    <br />
+    <form method="post" >
+        Secret Key
+        <input type="text" id="email_key" name="email_key" value="{{user.email_key}}" readonly="readonly" />
+        <input type="button" id="generate" value="Generate New Key" />
+        <input type="submit" name="submit" value="Save" />
+    </form>
+    </p>
+</div>
+</div>
+<script type="text/javascript" src="/static/js/jquery.password.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.notifyBar.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.notifyBar.css" media="screen" /> 
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#generate').click(function() {
+	      var key = $.password(8);
+          $("#email_key").val(key.toLowerCase());
+        });
+        {% if notify %}
+		$.notifyBar({
+		    html: "Updated",
+		    animationSpeed: "normal",
+		    cls: 'success',
+		    delay: 5000
+		 });
+		{% endif %}
+    });
+    
+
+</script>
+
+{% endblock content %}
